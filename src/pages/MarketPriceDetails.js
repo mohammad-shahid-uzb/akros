@@ -27,10 +27,8 @@ const MarketPriceDetails = () => {
   const [itemDetails, setItemDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showContact, setShowContact] = useState(false); // State for showing contact modal
-  const [wishlist, setWishlist] = useState([]); // Wishlist state
+  const [setWishlist] = useState([]); // Wishlist state
   const [snackbarOpen, setSnackbarOpen] = useState(false); // Snackbar state for wishlist
-
-  console.log("itemDeatils", itemDetails);
 
   const theme = useTheme(); // Get the current theme
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Check if the screen size is small (mobile)

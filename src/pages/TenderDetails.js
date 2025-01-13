@@ -70,7 +70,6 @@ const TenderDetailPage = () => {
     deadline,
     description,
     objectives = [], // Default to empty array if objectives are not present
-    contact = {}, // Default to empty object if contact is not present
   } = tender;
 
   return (
