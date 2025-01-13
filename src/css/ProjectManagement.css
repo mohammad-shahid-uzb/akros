@@ -1,0 +1,17 @@
+/* ProjectManagement.css */
+@media (max-width: 768px) {
+    .halfScreenSection,
+    .chequeredSection {
+      grid-template-columns: 1fr !important;
+      padding: 10px !important;
+    }
+  
+    .fullScreenSection {
+      height: 300px !important;
+    }
+  
+    .overlayContent {
+      padding: 10px !important;
+    }
+  }
+  

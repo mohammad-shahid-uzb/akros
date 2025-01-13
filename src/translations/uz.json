@@ -1,0 +1,26 @@
+{
+    "welcome": "Akros ga xush kelibsiz",
+    "subtitle": "Sizning eng yaxshi qurilish sanoati manbangiz",
+    "features": [
+      "Bozor narxlari bo'yicha ma'lumotlar",
+      "Davom etayotgan loyihalar",
+      "Hozirgi tanlovlar",
+      "Ishchi ma'lumotlar",
+      "Yangiliklar va yangilanishlar",
+      "Qonunchilik yangiliklari",
+      "Taminotchi ro'yxatlari",
+      "Loyiha boshqaruvi vositalari",
+      "Ish o'rinlari",
+      "Ta'lim va sertifikatlash",
+      "Holatlar va muvaffaqiyat hikoyalari",
+      "Texnik resurslar",
+      "Interaktiv xaritalar",
+      "Barqarorlik va innovatsiyalar",
+      "Moliya bo'yicha tahlillar",
+      "Hamjamiyat forumi",
+      "Foydalanuvchi shaxsiylashtirish",
+      "BIM bilan integratsiya"
+    ],
+    "featureDescription": "{{feature}} uchun tavsif bu erda bo'ladi."
+  }
+  
