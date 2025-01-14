@@ -17,6 +17,7 @@ import {
   InputLabel,
   IconButton,
   useMediaQuery,
+  CircularProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
@@ -30,6 +31,7 @@ const VendorListings = () => {
   const [categoryFilter, setCategoryFilter] = useState(""); // Category filter state
   const [ratingFilter, setRatingFilter] = useState(""); // Rating filter state
   const [favorites, setFavorites] = useState([]); // State for favorite vendors
+  const [loading, setLoading] = useState(true); // State to handle loading
 
   const navigate = useNavigate(); // Create the navigate function
 
@@ -51,6 +53,7 @@ const VendorListings = () => {
         const vendorData = await fetchVendors();
         setVendors(vendorData);
         setFilteredVendors(vendorData); // Initially display all vendors
+        setLoading(false);
       } catch (error) {
         console.error("Failed to fetch vendors:", error);
       }
@@ -117,6 +120,21 @@ const VendorListings = () => {
     setFavorites(updatedFavorites);
     localStorage.setItem("favoriteVendors", JSON.stringify(updatedFavorites)); // Store in localStorage
   };
+
+  if (loading) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <Box

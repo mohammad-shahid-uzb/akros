@@ -24,7 +24,7 @@ const formatDate = (dateString) => {
 const VendorTopCard = ({ Vendor = {} }) => {
   const [activeTab, setActiveTab] = useState(0);
   //const lastUpdateDate = Vendor?.lastUpdate || "Not Available"; // Default value for last updated date
-
+  console.log("Vendor", Vendor);
   const navigate = useNavigate(); // Create navigate function
 
   const handleTabChange = (event, newValue) => {
@@ -54,9 +54,7 @@ const VendorTopCard = ({ Vendor = {} }) => {
           <Grid item xs={12} md={2} display="flex" justifyContent="center">
             <Avatar
               alt="Vendor Logo"
-              src={`${process.env.REACT_APP_BACKEND_URL}${
-                Vendor?.imageUrl || ""
-              }`}
+              src={`${Vendor?.imageUrl || ""}`}
               sx={{
                 width: { xs: 70, md: 100 },
                 height: { xs: 70, md: 100 },

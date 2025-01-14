@@ -16,6 +16,7 @@ import {
   AppBar,
   Toolbar,
   Container,
+  CircularProgress,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
@@ -30,7 +31,7 @@ const initialFilterState = {
 
 const MarketPriceInsights = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
-
+  const [loading, setLoading] = useState(true); // State to handle loading
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState(initialFilterState);
   const [filterOptions, setFilterOptions] = useState({
@@ -60,6 +61,7 @@ const MarketPriceInsights = () => {
       const industries = ["All", ...new Set(data.map((item) => item.industry))];
 
       setFilterOptions({ countries, cities, industries });
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching initial data:", error);
     }
@@ -113,6 +115,21 @@ const MarketPriceInsights = () => {
   };
 
   const filteredItems = applyFiltersToData(marketPrices, appliedFilters);
+
+  if (loading) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
